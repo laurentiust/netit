@@ -1,0 +1,26 @@
+diff --git a/js/bartik.js b/js/bartik.js
+index 78989d0..0729a94 100755
+--- a/js/bartik.js
++++ b/js/bartik.js
+@@ -32,6 +32,21 @@
+           $(this).parent().height(window_height-header_height-footer_height);
+       }
+     });
++
++    $(window).scroll(function(){
++      var windowpos = $(window).scrollTop();
++      var scrollItems = $(menu_element).find("a").map(function() {
++        var item = $(this).attr("href").split('/')[1];
++        offset = $(item).offset().top;
++        if (offset < (windowpos + 45)) {
++          $(menu_element + " a").parent().removeClass("active");
++          $(menu_element + " a").removeClass("active");
++          $(this).addClass("active");
++          $(this).parent().addClass("active");
++          return item;
++        }
++      });
++    });
+    
+     $("#main > #breadcrumb").remove();
+     $("#main > #sidebar-first").remove();

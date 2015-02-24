@@ -1,0 +1,9 @@
+name =Net IT administration module
+description = "Provides any administration options requested by NetIT."
+package = NetIT
+core = 7.x
+
+dependencies[] = system (>7.30)
+files[] = tests/admin_menu.test
+
+version = "7.x-1.0"
